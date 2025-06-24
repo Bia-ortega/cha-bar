@@ -1,0 +1,154 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('img/imagem.jpg');
+    background-repeat: cover;
+    /*background: linear-gradient(135deg, #f1fff0, #e7ffe1);*/
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #727a6e;
+    font-size: 1.8em;
+}
+
+p {
+    font-size: 1em;
+    color: #555;
+}
+
+.lista-presentes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.presente {
+    background-color: #f6ffee;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #e2f8cd;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.presente:hover {
+    background-color: #e2ffd6;
+    transform: scale(1.02);
+}
+
+.presente.reservado {
+    text-decoration: line-through;
+    color: #999;
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.paleta-cores {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9fff8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.paleta-cores h2 {
+    color: #727a6e;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.cores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.cor {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cor:nth-child(3) {
+    color: #333; /* texto escuro pro off white */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+li:hover {
+    background-color: #e0e0e0;
+}
+
+li.reservado {
+    text-decoration: line-through;
+    color: gray;
+    background-color: #ddd;
+    cursor: default;
+}
+
+
+
+/* Responsivo para telas menores */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .presente {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+}
