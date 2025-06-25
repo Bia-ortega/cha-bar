@@ -33,6 +33,11 @@ app.use('/presentes', presenteRoutes);
 
 // Porta padrão
 const PORT = process.env.PORT || 3000;
+
+app.get('/teste', (req, res) => {
+  res.send('Servidor está funcionando!');
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}, http://localhost:${PORT}`);
 });

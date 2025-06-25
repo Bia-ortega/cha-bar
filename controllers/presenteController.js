@@ -4,7 +4,11 @@ const db = require('../config/db');
 const listarPresentes = (req, res) => {
     const sql = 'SELECT * FROM presentes';
     db.query(sql, (err, results) => {
-        if (err) return res.status(500).json({ error: err });
+        if (err) {
+            console.error('Erro ao listar presentes:', err); // 👈 Log de erro
+            return res.status(500).json({ error: err });
+        }
+        console.log('Presentes encontrados:', results.length); // 👈 Log de sucesso
         res.status(200).json(results);
     });
 };
