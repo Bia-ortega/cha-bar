@@ -27,7 +27,7 @@ fetch('/presentes')
             li.addEventListener('click', () => {
                 if (!li.classList.contains('reservado')) {
                     // Reservar presente
-                    fetch(`http://localhost:3000/presentes/reservar/${presente.id}`, { method: 'POST' })
+                    fetch(`/presentes/reservar/${presente.id}`, { method: 'POST' })
                         .then(() => {
                             li.classList.add('reservado');
                             li.textContent += ' (Reservado)';
@@ -37,7 +37,7 @@ fetch('/presentes')
                 } else {
                     // Desmarcar presente
                     if (confirm('Deseja desmarcar este presente?')) {
-                        fetch(`http://localhost:3000/presentes/desmarcar/${presente.id}`, { method: 'POST' })
+                        fetch(`/presentes/desmarcar/${presente.id}`, { method: 'POST' })
                             .then(() => {
                                 li.classList.remove('reservado');
                                 li.textContent = presente.nome; // remove o "(Reservado)"
